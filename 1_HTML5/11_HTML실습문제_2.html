@@ -10,24 +10,58 @@
     <form action="#">
         <fieldset>
             <legend>납품자 정보</legend>
-            <br>
-            1. 납품자명 : <input type="text"> <br><br>
-            2. email : <input type="email" placeholder="answer@naver.com"><br><br>
-            3. 홈페이지 : <input type="url" value="https://"><br><br>
-            4. 지역 : <select name="location">
+            <ol>
+                <li>
+                    <label> 납품자명 : </label>
+                    <input type="text"> <br><br>
+                </li>
+                <li>
+                    <label> email : </label>
+                    <input type="email" placeholder="answer@naver.com">
+                    <br><br>
+                </li>
+                <li>
+                    <label> 홈페이지 : </label>
+                    <input type="url" value="https://">
+                    <br><br>
+                </li>
+                <li>
+                    <label> 지역 : </label>
+                    <select name="lo">
                         <option value="Busan">부산</option>
                         <option value="Seoul">서울</option>
                         <option value="Gyeongi">경기</option>
                         <option value="Gangwon">강원</option> 
                      </select> <br><br>
+                </li>
+            </ol>
         </fieldset>
         <fieldset>
             <legend>납품 정보</legend>
             <ul>
-                <li>상품명 : <input type="text"></li><br>
-                <li>납품수량 : <input type="number" min="100" placeholder="최소 100"></li><br>
-                <li>납품등급 : <input type="range"></li> <br>
-                <li>기타사항 : <textarea rows="5"></textarea> </li>
+                <li>
+                    <label>
+                        상품명 : <input type="text">
+                    </label>
+                </li>
+                <br>
+                <li>
+                    <label>
+                        납품수량 : <input type="number" min="100" placeholder="최소 100">
+                    </label>
+                </li>
+                <br>
+                <li>
+                    <label>
+                        납품등급 : <input type="range">
+                    </label>
+                </li>
+                <br>
+                <li>
+                    <label>
+                        기타사항 : <textarea name="etx" cols="20" rows="5"></textarea> 
+                    </label>
+                </li>
             </ul>
         </fieldset>
         <br>
