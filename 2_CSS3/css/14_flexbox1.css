@@ -46,7 +46,7 @@
     flex-wrap: wrap;
     
     /* item을 여러 줄로 배치(뒤에서부터 배치) */
-    /* flex-wrap: wrap-reverse;  _밑으로 이동, 화면 줄어들면 위로 */
+    flex-wrap: wrap-reverse;  /*_밑으로 이동, 화면 줄어들면 위로 */
 
 
 
