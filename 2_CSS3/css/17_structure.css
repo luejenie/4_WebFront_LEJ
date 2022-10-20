@@ -72,6 +72,7 @@ header > section:nth-child(3) { flex-basis :  15% }
 #home-logo{
     width: 120px;
 }
+
 header > section:nth-child(1){
     /* 선택자가 중복 작성되어도 오류X, 모든 CSS 속성이 적용됨. */
     display: flex;
