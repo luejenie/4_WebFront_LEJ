@@ -44,7 +44,7 @@ function div(){
     if(Number(input2.value) != 0){
         calResult.innerHTML = Number(input1.value) / Number(input2.value);
     } else {
-        calResult.innerText = ;
+        calResult.innerText = "0으로 나눌 수 없습니다." ;
     }
 }
 
