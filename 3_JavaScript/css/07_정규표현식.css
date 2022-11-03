@@ -1,0 +1,20 @@
+.area{
+    width: 500px;
+    min-height: 300px;  /* 최소 높이 300px */
+    border: 1px solid black;
+}
+
+
+.confirm{
+    background-color: green;
+    color:white; 
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.error{ 
+    background-color: red;
+    color:white; 
+    font-weight: bold;
+    font-family: '맑은고딕';
+}
