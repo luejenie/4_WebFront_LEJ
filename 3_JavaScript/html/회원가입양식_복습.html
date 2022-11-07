@@ -114,77 +114,62 @@
         const inputId = document.getElementById("inputId");
 
         inputId.addEventListener("change", function(){
-            
-            
+
             const regEx = /^[a-z][\w-_]{5,13}$/;
-            
-            if(regEx.test(this.value)){
+
+            if(regEx.test(inputId.value)){
                 this.style.backgroundColor = "springgreen";
-                
+                this.style.color = "black";
+
             } else {
                 this.style.backgroundColor = "red";
                 this.style.color = "white";
             }
 
-            
             if(this.value.trim().length == 0){
                 this.style.backgroundColor = "";
             }
         })
-        
-        
-        // 비밀번호, 비밀번호 확인 : 키보드가 올라올 때
 
+        
+        //비밀번호,비밀번호 확인 : 키보드가 올라올 때
+        
         const inputPw = document.getElementById("inputPw");
         const inputPwConfirm = document.getElementById("inputPwConfirm");
         const pwMessage = document.getElementById("pwMessage");
 
-        // 비밀번호 미입력 + 비밀번호 확인 작성
-        inputPwConfirm.addEventListener("input", function(){
-
+        // 비밀번호 미입력 + 확인 작성
+        inputPwConfirm.addEventListener("keyup", function(){
             if(inputPw.value.trim().length == 0){
                 this.value = "";
                 alert("비밀번호를 입력해주세요.");
-                inputPw.focus();
+                inputPw.focus();    
             }
-        })
 
-
-        // 비밀번호 입력
-        inputPw.addEventListener("input", function(){
-            
-            // 비밀번호 - 확인 일치
             if(inputPw.value == inputPwConfirm.value){
                 pwMessage.innerText = "비밀번호 일치";
                 pwMessage.classList.add("confirm");
                 pwMessage.classList.remove("error");
-                
-            } else { // 비밀번호 - 확인 불일치
+            } else {
                 pwMessage.innerText = "비밀번호 불일치";
                 pwMessage.classList.add("error");
                 pwMessage.classList.remove("confirm");
             }
-            
+
         })
 
-        // 비밀번호 확인 입력 
-        //_ 위에 입력 없이 이 코드만 작성하면, 비밀번호 확인 쓸 때만 메세지가 보임.
-        //  +++ 비밀번호-확인 모두 입력 후 비밀번호를 지우면 적용이 안됨.
-        // -> 반드시 둘 다 입력해야함!!!!
-        inputPwConfirm.addEventListener("input", function(){
-            
-            // 비밀번호 - 확인 일치
+        // 비밀번호 - 확인 일치
+        inputPw.addEventListener("keyup", function(){
+
             if(inputPw.value == inputPwConfirm.value){
                 pwMessage.innerText = "비밀번호 일치";
                 pwMessage.classList.add("confirm");
                 pwMessage.classList.remove("error");
-                
-            } else { // 비밀번호 - 확인 불일치
+            } else {
                 pwMessage.innerText = "비밀번호 불일치";
                 pwMessage.classList.add("error");
                 pwMessage.classList.remove("confirm");
             }
-            
         })
 
 
@@ -196,41 +181,44 @@
 
             const regEx = /^[가-힣]{2,5}$/;
 
-            if(regEx.test(inputName.value)){
+            if(regEx.test(this.value)){
                 nameMessage.innerText = "정상입력";
                 nameMessage.classList.add("confirm");
                 nameMessage.classList.remove("error");
-            
             } else {
                 nameMessage.innerText = "한글만 입력하세요.";
                 nameMessage.classList.add("error");
                 nameMessage.classList.remove("confirm");
             }
         })
-        
 
+
+        // 회원가입 버튼 클릭 시
         function validate(){
 
-            const gender = document.getElementsByName("gender");
-            const inputTel = document.getElementById("inputTel");
-
             // 성별
-            if(!gender[0].checked && !gender[1].checked){
-                alert("성별을 선택해주세요");
+            const gender = document.querySelector("input[name='gender']:checked");
+
+            if(gender == null){
+                alert("성별을 입력해주세요.")
                 return false;
             }
 
-
-            const regEx = /^[0][0-9]{1,2}-[0-9]{3,4}-[0-9]{4}/;
+            // 전화번호
+            const inputTel = document.getElementById("inputTel");
+            const regEx = /^[0][0-9]{1,2}-[0-9]{3,4}-[0-9]{4}$/;
+            
             if(!regEx.test(inputTel.value)){
-                alert("전화번호의 형식이 올바르지 않습니다.");
+                alert("전화번호 형식이 올바르지 않습니다.");
+                inputTel.value = "";
+                inputTel.focus();
                 return false;
             }
-            return true;
-        }
-    
 
-        
+            return true;
+
+        }
+
 
 
     </script>

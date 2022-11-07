@@ -35,7 +35,7 @@ for(let item of area){
 }
 
 for(let item of box){
-        item.syle.height = "150px";
+        item.style.height = "150px";
         item.style.borderBottom = "1px solid black";
 }
 
@@ -48,6 +48,30 @@ for(let item of boxColor){
 for(let i=0; i<boxColor.length; i++){
         boxColor[i].addEventListener("change", function(){
                 box[i].style.backgroundColor = this.value;
-                
         })
 }
+
+
+document.getElementById("btn1").addEventListener("click", function(){
+        const duration = document.getElementById("input1").value;
+
+        for(let item of box){
+                item.style.transitionDuration = duration + "s";
+        }
+
+        document.getElementById("print1").innerText = duration;
+})
+
+document.getElementById("clearBtn").addEventListener("click",function(){
+        for(let item of box){
+                item.style.backgroundColor = "";
+                item.style.transitionDuration = 0 + "s";
+        }
+
+        for(let item of boxColor){
+                item.value = "";
+        }
+
+        document.getElementById("print1").innerText = 0;
+        document.getElementById("input1").value = "";
+})

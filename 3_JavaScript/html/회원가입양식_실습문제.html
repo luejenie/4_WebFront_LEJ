@@ -262,7 +262,7 @@
             const gender = document.querySelector("input[name='gender']:checked");
             // 체크된 성별 라디오 버튼만 얻어오기
 
-            if(gender == null){
+            if(gender == null){  //_체크 안 했을 때 null
                 alert("성별을 선택해주세요.");
                 return false;
             }
