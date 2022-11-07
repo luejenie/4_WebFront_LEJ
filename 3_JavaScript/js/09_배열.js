@@ -31,7 +31,7 @@ document.getElementById("btn1").addEventListener("click", function(){
     // }
 
 
-    // _forEach 구문 (유사배열)
+    // _forEach 구문
     // 2. 배열.forEach(function(item,index){반복수행 코드}) -  배열에서만 사용
     // - item : 현재 접근중인 요소
     // - index : 현재 인덱스
@@ -146,5 +146,3 @@ document.getElementById("btn3").addEventListener("click", function(){
     lotto.sort(function(a,b){ return a-b });
     console.log("로또번호 : " + lotto);
 })
-
-
