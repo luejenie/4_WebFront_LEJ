@@ -51,6 +51,30 @@
 
 
 
+    <h1>Node와 Element의 차이</h1>
+
+    <pre>
+        Node : 태그(요소 노드), 속성, 주석, 내용(텍스트 노드) 등을 모두 표현.
+
+        Element : Node의 하위 개념으로 요소 노드만을 표현
+
+
+        [Element만 탐색하는 방법] 
+
+        children : 자식 요소만 모두 선택
+        parentElement : 부모 요소 선택
+
+        firstElementChild : 첫 번째 자식 요소 선택
+        lastElementChild  : 마지막 자식 요소 선택
+
+        previousElementSibling : 이전 형제 요소 선택
+        nextElementSibling     : 다음 형제 요소 선택
+
+    </pre>
+
+    <button id="btn2">Element 확인하기</button>
+
+
     <script src="../js/13_DOM.js"></script>
 </body>
 </html>
